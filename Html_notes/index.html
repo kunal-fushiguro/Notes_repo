@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+    <!-- <!DOCTYPE html>    tells broswer you  are using HTML5
+    <html lang="en">        Root of an html documents and lang is a attribute that tell we are using english 
+    <head>                  container for meta data
+        <meta charset="UTF-8">                                      
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title> title of a page
+    </head>
+    <body>  cotains all data rendered by the broswer
+    </body>
+    </html> -->
+
+
+    <!-- this is comment is Html  -->
+    <!-- heading tags  -->
+    <!-- NOTES: it is used for show importance in html not for size  -->
+    <h1>heading 1</h1>
+    <h2>heading 2</h2>
+    <h3>heading 3</h3>
+    <h4>heading 4</h4>
+    <h5>heading 5</h5>
+    <h6>heading 6</h6>
+    <hr>
+    <!-- anchor tags  -->
+    <!-- it is used to add link on websites  -->
+    <a href="https://www.google.com/" target="_main">google</a>
+    <a href="https://www.google.com/" target="_main"><img src="imagelogo.jpg" alt="google_image_here"></a>
+    <hr>
+    <!-- paragraph tag -->
+    <!-- used to write paragraph in websites -->
+    <p>hello i'm paragraph</p>
+    <hr>
+    <!-- br tag -->
+    <!-- used to add newline or break a line  -->
+    <br>
+    <hr>
+    <!-- image tag -->
+    <!-- used to add image on websites  -->
+    <img src="image.png" alt="image">
+    <hr>
+    <!-- absolute link -->
+        <!-- normal links like https://www.google.com/ etc -->
+    <!-- relative link -->
+        <!-- path of a file that is no your system or server like /home/product/index.html -->
+
+    <!-- bold italic underline tag -->
+    <b>bold</b>
+    <i>italic</i>
+    <u>underline</u>
+    <hr>
+    <!-- big and small tag -->
+    <big>big tag</big>
+    <small>small tag</small>
+
+    <!-- hr tag -->
+    <!-- used to display horizontal ruler or scale  -->
+    <hr>
+    <!-- sub and super script  -->
+    <p>h <sub>2</sub>o</p>
+    <p>n+n <sup>2</sup>=10</p>
+    <hr>
+    <!-- pre tag -->
+    <!-- used to display text as it is (without ignoring spaces & next line ) -->
+    <!-- by default html ignores extra spaces or next line in tags  -->
+    <pre>
+        this
+        is pre
+        tag
+    </pre>
+    <hr>
+    <!-- semantic tags -->
+    <!-- using semantic tag help you to use right tag on right things like header tag for header of a website -->
+    <main>
+        <!-- this is main tag -->
+        <header>
+             this is header tag  
+        </header>
+        <hr>
+        <!-- more tag used inside main tag  -->
+        <section>
+            this is a section tag
+        </section>
+        <hr>
+        <article>
+            this is article tag
+        </article>
+        <hr>
+        <aside>
+            this is aside tag
+        </aside>
+        <hr>
+        <footer>
+            this is footer tag
+        </footer>
+    </main>
+    <hr>
+    <!-- div tag  -->
+    <!-- used as a container is websites  -->
+    <div>
+        this is div tag
+    </div>
+    <hr>
+    <!-- span tag  -->
+    <!-- its take only width as per size  -->
+    <span>span tag 1</span>
+    <span>span tag 2</span>
+    <hr>
+    <!-- list in html -->
+    <!-- unordered list  -->
+    <ul>    
+        <li>this is unordered list</li>
+        <li>one</li>
+        <li>two</li>
+    </ul>
+    <!-- ordered list  -->
+    <ol>
+        <li>this is ordered list</li>
+        <li>one</li>
+        <li>two</li>
+    </ol>
+    <hr>
+    <!-- tables in html -->
+    <table>
+        <!-- this is table tag  -->
+        <caption>
+            <!-- its is caption tag -->
+            student data
+        </caption>
+        <tr>
+            <!-- used to display table row (tr) -->
+            <th>
+                <!-- used to display table header -->
+                Name
+            </th>
+            <th>Roll No</th>
+        </tr>
+        <tr>
+            <td>
+                <!-- used to display table data -->
+                kunal
+            </td>
+            <td>
+                2004
+            </td>
+        </tr>
+        <!-- colspan attribute in table -->
+        <tr>
+            <th colspan="2">colspan_attribute</td>
+        </tr>
+        <!-- thead is a tag that is used to wrap up header in table -->
+        <!-- tbody is a tag that is used to wrap up body in table -->
+    </table>
+    <hr>
+    <!-- form tag -->
+    <form action="action.php">
+        <!-- input tag  -->
+        <input type="radio" class="a">male
+        <input type="radio" class="a">female
+        <hr>
+        <input type="text" placeholder="username">
+        <input type="password" placeholder="password">
+        <input type="number" placeholder="mobile number">
+        <!-- select tag hellp to create drop down lis input in html -->
+        <select name="city" id="city">
+            <option value="delhi">delhi</option>
+            <option value="mumbai">mumbai</option>
+            <option value="banglore">banglore</option>
+        </select>
+        <hr>
+        <!-- textarea tag is like feedback box where user can write there feedback  -->
+        <textarea name="feedback" id="" cols="30" rows="10">feedback</textarea>
+        <input type="submit">
+    </form>
+    <hr>
+    <!-- iframe tag help to show other website inside our website -->
+    <iframe src="https://www.google.com/" frameborder="50"></iframe>
+    <hr>
+    <!--  video tag & there attributes -->
+    <video src="video.mp4" controls loop autoplay></video>
+    <!-- for more information go and visit https://developer.mozilla.org/en-US/docs/Web/HTML  -->
+</body>
+</html>
