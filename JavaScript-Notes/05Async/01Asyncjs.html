@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="h1tag">hello</h1>
+    <button id="stop">Stop</button>
+    <script>
+        const id = setTimeout(()=>{
+            document.querySelector('#h1tag').innerHTML = "bye bye..."
+        },3000);
+        document.querySelector('#stop').addEventListener('click',()=>{
+            clearTimeout(id);
+            document.querySelector('#h1tag').innerHTML = "You Stoped the setTimeout";
+        })
+    </script>
+</body>
+</html>

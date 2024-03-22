@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="parent" style="display: flex; justify-content: center;align-items: center; width: 100vw; height: 100vh;background-color: white;gap: 10px;">
+        <span class="red" style="width: 70px; height: 70px; background-color: red; border: 2px solid black;cursor: pointer;"></span>
+        <span class="yellow" style="width: 70px; height: 70px; background-color: yellow; border: 2px solid black;cursor: pointer;"></span>
+        <span class="gray" style="width: 70px; height: 70px; background-color: gray; border: 2px solid black;cursor: pointer;"></span>
+    </div>
+    <script>
+        const div = document.querySelector('.parent');
+        const allSpan = document.querySelectorAll('span');
+        console.log(allSpan); 
+        allSpan.forEach((span)=>{
+            span.addEventListener('click',(e)=>{    
+                div.style.backgroundColor = e.target.className;
+            })
+        })
+    </script>
+</body>
+</html>

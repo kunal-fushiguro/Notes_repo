@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="display: flex; justify-content: center;align-items: center; width: 100vw; height: 100vh;background-color: gray;gap: 10px;">
+        <h1 class="clock">
+
+        </h1>
+    </div>
+    <script>
+        const h1Tag = document.querySelector('.clock');
+        setInterval(()=>{
+            let data = new Date();
+            // console.log(data.toLocaleTimeString());
+            h1Tag.innerHTML = data.toLocaleTimeString();
+        },1000)
+    </script>
+</body>
+</html>

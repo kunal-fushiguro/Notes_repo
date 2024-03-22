@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // prototype 
+        const num = [1,2,3,4,5];
+        // console.log(num.prototype);
+        // function string is object
+
+        function user(val){
+            this.val = val;
+            return this.val;
+        }
+
+        user.prototype.increment = function(){
+            this.val++;
+        }
+
+        const newVal1 = new user(12);
+        const newVal2 = new user(12);
+
+        console.log(newVal1.val);
+        console.log(newVal2.val);
+        
+        newVal1.increment();
+        console.log(newVal1.val);
+
+        Object.prototype.kunal = function(){
+            console.log("I'm every Where ");
+        }
+
+        const newobj = {
+            user:"kunal"
+        }
+
+        console.log(newobj.kunal());
+
+
+        // inheritance
+        
+        const newobj2 = {
+            name:"abz",
+            __proto__:newobj
+        }
+
+        console.log(newobj2.__proto__.user);
+
+
+        // modern syntax
+
+        Object.setPrototypeOf(newobj,newobj2);
+
+    </script>
+</body>
+</html>

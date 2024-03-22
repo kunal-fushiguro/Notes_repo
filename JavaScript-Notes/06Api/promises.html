@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent" style="display: flex; justify-content: center;align-items: center; width: 100vw; height: 100vh;background-color: gray;gap: 10px; color: black;">
+
+    </div>
+    <script>
+        // 
+        const promiseOne = new Promise((reolve,reject)=>{
+            // do  async 
+            // Database call , cryptography , network
+            setTimeout(()=>{
+                console.log("hi");
+                reolve();
+            },1000); 
+        })
+        promiseOne.then(()=>{
+            console.log("promise consumed");
+        })
+
+        // 
+        new Promise((res,rej)=>{
+            setTimeout(() => {
+                console.log("hi2");
+                res();
+            }, 1000);
+        }).then(()=>{
+            console.log("work done");
+        })
+
+        // 
+        const promiseThree = new Promise((res,rej)=>{
+            setTimeout(()=>{
+                res({name:"kunal"});
+            },1000)
+        })
+        promiseThree.then((data)=>{
+            console.log(data);
+        })
+
+        // 
+        const promiseFour = new Promise((res,rej)=>{
+         setInterval(()=>{
+            const reject = false;
+            // const reject = true;
+            if(!reject){
+                res({name:"kunal"});
+            }else{
+                rej('Error!!!!')
+            }
+         },1000)   
+        })
+        promiseFour.then((data)=>{
+            console.log(data);
+            return data.name;
+        }).then((name)=>{
+            console.log(name);
+        }).catch((data)=>{
+            console.log(data);
+        }).finally(()=>{
+            console.log("the Promise is either resolve or reject");
+        })
+
+
+        // 
+        const promiseFive = new Promise((res,rej)=>{
+            setTimeout(()=>{
+                res({name:"kunal"});
+            },1000)
+        })
+        async function data(){
+            try{
+                const data = await promiseFive;
+            console.log(data , " promise resolve by Async Await");
+            }catch{
+                console.log("error");
+            }
+        }
+        data();
+
+
+        // 
+        const url = 'https://randomuser.me/api/';
+        async function callApi(){
+            try{
+                const response = await fetch(url);
+                const data = await response.json();
+                console.log(data);
+            }catch{
+                console.log("error!!!");
+            }
+        }
+        callApi()
+
+
+        // 
+        fetch(url).then((res)=>{
+            return res.json();
+        }).then((res)=>{
+            console.log(res);
+        }).catch(()=>{
+            console.log("error");
+        })
+
+    </script>
+</body>
+</html>

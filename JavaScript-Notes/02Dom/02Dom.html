@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="display: flex; justify-content: center; align-items: center; background-color: gray;">
+    <div>
+        <ul class="langauge">
+            <li>python</li>
+        </ul>
+    </div>
+
+
+    <script>
+        const div = document.createElement('div');
+        console.log(div);
+        div.className = "main";
+        div.id = "myID";
+        div.setAttribute('title',"hello from div");
+        div.style.background= "red";
+        // div.innerText = "hello form new div";
+        const addtext = document.createTextNode("hello world");
+        div.appendChild(addtext);
+        document.body.appendChild(div);
+        // add
+        function addLang(langName){
+            const newli = document.createElement('li');
+            newli.appendChild(document.createTextNode(langName));
+            document.querySelector('.langauge').appendChild(newli)
+        }
+        addLang('c++')
+        addLang('goLang')
+
+        // edit
+        function editName(newName){
+            const secondli = document.querySelector("li:nth-child(2)");
+            console.log(secondli);
+            secondli.innerText = newName
+        }
+        editName("JavaScript")
+
+
+        // remove 
+        function removeli(){
+            const lastli = document.querySelector("li:last-child");
+            lastli.remove();
+        }
+        removeli();
+    </script>
+</body>
+</html>

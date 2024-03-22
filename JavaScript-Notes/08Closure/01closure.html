@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body style="background-color: black; padding: 0; margin: 0">
+    <button class="orange">orange</button>
+    <button class="green">green</button>
+    <script>
+      function outer() {
+        let name = "kunal";
+        function inner() {
+          // lexical scoping
+          // getting access of parent function variable
+          console.log("Inner", name);
+        }
+        function inner2() {
+          // lexical scoping
+          // getting access of parent function
+          console.log("Inner2", name);
+        }
+        inner();
+        inner2();
+      }
+      outer();
+
+      // closure
+      function closure() {
+        const name = "kunal-Closure";
+        function inner() {
+          console.log(name);
+        }
+        return inner;
+        // here it return child function lexical scope
+      }
+      const newFun = closure();
+      newFun();
+
+      // example
+      // document.querySelector('.orange').addEventListener('click',()=>{
+      //     document.body.style.backgroundColor = "orange"
+      // })
+      // document.querySelector('.green').addEventListener('click',()=>{
+      //     document.body.style.backgroundColor = "green"
+      // })
+
+      function clickHandle(color) {
+        return function () {
+          document.body.style.backgroundColor = color;
+        };
+      }
+
+      document.querySelector(".orange").onclick = clickHandle("orange");
+      document.querySelector(".green").onclick = clickHandle("green");
+    </script>
+  </body>
+</html>

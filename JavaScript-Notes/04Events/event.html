@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .parent{ 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;
+            gap: 20px;
+        }
+        .class{
+            width: 30%;
+            height: 40%;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="class1 class"></div>
+        <div class="class2 class"></div>
+        <div class="class3 class"></div></div>
+    <script>
+        document.querySelector('.parent').addEventListener('click',()=>{
+            console.log("click on parent");
+        },true)
+        document.querySelector('.class1').addEventListener('click',()=>{
+            console.log("click on class1");
+        },true)
+        document.querySelector('.class2').addEventListener('click',(e)=>{
+            console.log("click on class2");
+            e.stopPropagation();
+        },false)
+        document.querySelector('.class3').addEventListener('click',()=>{
+            console.log("click on class3");
+        },false)
+
+        // js event propagation me agar false rehga to under se bahar jayega Capturing 
+        // js event propagation me agar true rehga to bahar se under jayega Capturing
+    </script>
+</body>
+</html>

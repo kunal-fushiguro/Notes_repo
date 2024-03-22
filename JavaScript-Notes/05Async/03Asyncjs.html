@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div class="parent" style="display: flex; justify-content: center;align-items: center; width: 100vw; height: 100vh;background-color: white;gap: 10px;">
+        <button id="start">Start</button>
+        <button id="stop">Stop</button>
+    </div>
+    <script>
+        const start = document.querySelector('#start');
+        const stop = document.querySelector('#stop');
+        let id;
+        function ranColor(){
+            const hex = '0123456789ABCDEF';
+            let color = '#';
+            for(let i = 0;i < 6;i++){
+                color += hex[Math.floor(Math.random()*16)];
+            }
+            return color
+        }
+        start.addEventListener('click',()=>{
+            id = setInterval(() => {
+                document.querySelector('.parent').style.backgroundColor = ranColor();
+            }, 1000);
+        })
+        stop.addEventListener('click',()=>{
+            clearInterval(id);
+            id = 0;
+        })
+    </script>
+</body>
+</html>

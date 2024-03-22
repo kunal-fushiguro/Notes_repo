@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      class="parent"
+      style="
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: 100vh;
+        background-color: gray;
+        gap: 10px;
+        font-size: larger;
+        font-weight: bold;
+      "
+    ></div>
+    <script>
+      window.addEventListener("keydown", (e) => {
+        document.querySelector(".parent").innerHTML = `
+            <table>
+            <tr>
+                <th>Key</th>
+                <th>keyValue</th>
+            </tr>
+            <tr>
+                <td>${e.key}</td>
+                <td>${e.keyCode}</td>
+            </tr>
+            </table>
+            `;
+      });
+    </script>
+  </body>
+</html>

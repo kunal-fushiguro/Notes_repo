@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: gray;
+        }
+        #heading{
+            background: red;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        <h1 id="heading" class="headingh1">
+            hello form h1 Tag
+        </h1>
+        <h1 class="h2Tag" id="newTag">
+            hello for new h1 tag <span style="display: none;">
+                hello span
+            </span>
+        </h1>
+        <input type="text">
+        <ul>
+            <li class="list-item">one</li>
+            <li class="list-item">two</li>
+            <li class="list-item">three</li>
+        </ul>
+
+        <div class="days">
+            <h1 class="one">one</h1>
+            <h1>two</h1>
+            <h1>three</h1>
+        </div>
+    </div>
+    <script>
+        const h1Tag = document.getElementById('heading');
+        console.log(h1Tag.id);
+        console.log(h1Tag.className);
+
+        console.log(h1Tag.getAttribute('id'));
+        console.log(h1Tag.getAttribute('class'));
+
+        h1Tag.setAttribute('id','newId');
+        h1Tag.setAttribute('class','newClass');
+        console.log(h1Tag.id);
+        console.log(h1Tag.className);
+
+        h1Tag.style.backgroundColor = "green";
+        console.log(h1Tag.innerHTML);
+
+        const newH1Tag = document.getElementById('newTag');
+
+        console.log(newH1Tag.innerText);
+        console.log(newH1Tag.textContent);
+        console.log(newH1Tag.innerHTML);
+
+        const quarySelect = document.querySelector('h1');
+        console.log(quarySelect);
+
+        const input = document.querySelector('input[type="text"]');
+        console.log(input);
+
+        const li = document.querySelector('ul').querySelector('li');
+        console.log(li);
+
+        const liList = document.querySelectorAll('li');
+        // nodeList is A array like object
+        liList.forEach((tag) => {
+            console.log(tag);
+            tag.style.color = "green";
+        })
+
+        // htmlcollection
+        const HtmlCollection = document.getElementsByClassName('list-item');
+        console.log(HtmlCollection);
+        const itemArr = Array.from(HtmlCollection);
+        itemArr.forEach((tag)=>{
+            console.log(tag);
+            tag.style.backgroundColor = "orange";
+        })
+
+        const dayDiv = document.querySelector('.days');
+        console.log(dayDiv);
+        console.log(dayDiv.children);
+        for(let i = 0;i < dayDiv.children.length;i++){
+            console.log(dayDiv.children[i].innerHTML);
+        }
+        console.log(dayDiv.firstElementChild);
+        console.log(dayDiv.lastElementChild);
+
+        const childDiv = document.querySelector('.one');
+        console.log(childDiv);
+        console.log(childDiv.parentElement);
+        
+        console.log("Nodes : ", dayDiv.childNodes);
+
+    </script>
+</body>
+</html>
